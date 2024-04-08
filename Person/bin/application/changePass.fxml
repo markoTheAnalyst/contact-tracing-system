@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="404.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LogInController">
+   <children>
+      <JFXPasswordField fx:id="passwordField" layoutX="122.0" layoutY="79.0" prefHeight="25.0" prefWidth="161.0" promptText="Password" />
+      <JFXButton fx:id="changePassBttn" layoutX="131.0" layoutY="151.0" onAction="#changePass" prefHeight="36.0" prefWidth="142.0" style="-fx-background-color: #329c70;" text="change password" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

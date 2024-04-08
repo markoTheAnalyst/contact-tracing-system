@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="737.0" style="-fx-background-color: #f8f8f8;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ApplicationController">
+   <children>
+      <MenuBar fx:id="menu" prefHeight="25.0" prefWidth="609.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Opcije">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#changePassword" text="Promjena lozinke" />
+                  <MenuItem mnemonicParsing="false" onAction="#show" text="Prikaz mape" />
+                  <MenuItem mnemonicParsing="false" onAction="#showActivity" text="Pregled korišćenja aplikacije" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#localLogOut" text="Lokalna odjava" />
+                  <MenuItem mnemonicParsing="false" onAction="#registryLogOut" text="Odjava iz registra" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="chatArea" editable="false" layoutX="14.0" layoutY="136.0" prefHeight="238.0" prefWidth="209.0" />
+      <TextField fx:id="chatBox" layoutX="14.0" layoutY="388.0" />
+      <JFXButton fx:id="sendBttn" layoutX="175.0" layoutY="388.0" onAction="#send" prefHeight="25.0" prefWidth="48.0" style="-fx-background-color: #42b8e3; -fx-background-radius: 4;" text="Send" textFill="WHITE" />
+      <AnchorPane layoutX="269.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 20; -fx-background-color: #ffffff;">
+         <children>
+            <JFXTextField fx:id="fieldX" alignment="CENTER" labelFloat="true" layoutX="50.0" layoutY="36.0" prefHeight="25.0" prefWidth="39.0" promptText="x" />
+            <JFXTextField fx:id="fieldY" alignment="CENTER" labelFloat="true" layoutX="112.0" layoutY="36.0" prefHeight="25.0" prefWidth="39.0" promptText="y" />
+            <JFXTextField fx:id="startField" alignment="CENTER" labelFloat="true" layoutX="50.0" layoutY="94.0" prefHeight="25.0" prefWidth="39.0" promptText="start" />
+            <JFXTextField fx:id="endField" alignment="CENTER" labelFloat="true" layoutX="112.0" layoutY="94.0" prefHeight="25.0" prefWidth="39.0" promptText="end" />
+            <JFXButton fx:id="submitBttn" layoutX="51.0" layoutY="151.0" onAction="#submit" style="-fx-background-radius: 4; -fx-background-color: #42b8e3;" text="Submit location" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <JFXListView fx:id="notificationBar" layoutY="25.0" prefHeight="32.0" prefWidth="641.0" />
+      <JFXButton fx:id="notificationBttn" layoutX="663.0" layoutY="29.0" onAction="#showNotification" style="-fx-background-color: #42b8e3;" text="Display" textFill="WHITE" />
+      <JFXButton fx:id="uploadBttn" layoutX="562.0" layoutY="243.0" onAction="#upload" style="-fx-background-color: #42b8e3;" text="Upload files" textFill="WHITE" />
+   </children>
+</AnchorPane>

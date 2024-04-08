@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://token" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://token" xmlns:intf="http://token" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://token" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getToken">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTokenResponse">
+    <complexType>
+     <sequence>
+      <element name="getTokenReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logIn">
+    <complexType>
+     <sequence>
+      <element name="data" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logInResponse">
+    <complexType>
+     <sequence>
+      <element name="logInReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logOut">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logOutResponse">
+    <complexType/>
+   </element>
+   <element name="listTokens">
+    <complexType/>
+   </element>
+   <element name="listTokensResponse">
+    <complexType>
+     <sequence>
+      <element name="listTokensReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="doesTokenExist">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="doesTokenExistResponse">
+    <complexType>
+     <sequence>
+      <element name="doesTokenExistReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="logInResponse">
+
+      <wsdl:part element="impl:logInResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listTokensResponse">
+
+      <wsdl:part element="impl:listTokensResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logInRequest">
+
+      <wsdl:part element="impl:logIn" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logOutRequest">
+
+      <wsdl:part element="impl:logOut" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="doesTokenExistRequest">
+
+      <wsdl:part element="impl:doesTokenExist" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTokenRequest">
+
+      <wsdl:part element="impl:getToken" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logOutResponse">
+
+      <wsdl:part element="impl:logOutResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTokenResponse">
+
+      <wsdl:part element="impl:getTokenResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="doesTokenExistResponse">
+
+      <wsdl:part element="impl:doesTokenExistResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listTokensRequest">
+
+      <wsdl:part element="impl:listTokens" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="TokenServer">
+
+      <wsdl:operation name="getToken">
+
+         <wsdl:input message="impl:getTokenRequest" name="getTokenRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTokenResponse" name="getTokenResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logIn">
+
+         <wsdl:input message="impl:logInRequest" name="logInRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logInResponse" name="logInResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logOut">
+
+         <wsdl:input message="impl:logOutRequest" name="logOutRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logOutResponse" name="logOutResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listTokens">
+
+         <wsdl:input message="impl:listTokensRequest" name="listTokensRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:listTokensResponse" name="listTokensResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="doesTokenExist">
+
+         <wsdl:input message="impl:doesTokenExistRequest" name="doesTokenExistRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:doesTokenExistResponse" name="doesTokenExistResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TokenServerSoapBinding" type="impl:TokenServer">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getToken">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTokenRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTokenResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logIn">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logInRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logInResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logOut">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logOutRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logOutResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listTokens">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listTokensRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listTokensResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="doesTokenExist">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="doesTokenExistRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="doesTokenExistResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TokenServerService">
+
+      <wsdl:port binding="impl:TokenServerSoapBinding" name="TokenServer">
+
+         <wsdlsoap:address location="http://localhost:8080/TokenServer/services/TokenServer"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

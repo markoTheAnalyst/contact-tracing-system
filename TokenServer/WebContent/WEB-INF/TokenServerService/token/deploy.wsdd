@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from TokenServerService WSDL service -->
+
+  <service name="TokenServer" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://token"/>
+      <parameter name="wsdlServiceElement" value="TokenServerService"/>
+      <parameter name="schemaQualified" value="http://token"/>
+      <parameter name="wsdlServicePort" value="TokenServer"/>
+      <parameter name="className" value="token.TokenServer"/>
+      <parameter name="wsdlPortType" value="TokenServer"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://token" xmlns:retNS="http://token" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getToken" qname="operNS:getToken" returnQName="retNS:getTokenReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://token" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://token" xmlns:retNS="http://token" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="logIn" qname="operNS:logIn" returnQName="retNS:logInReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://token" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:data" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://token" name="logOut" qname="operNS:logOut" soapAction="">
+        <parameter xmlns:pns="http://token" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:token" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://token" xmlns:retNS="http://token" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="listTokens" qname="operNS:listTokens" returnQName="retNS:listTokensReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://token" xmlns:retNS="http://token" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="doesTokenExist" qname="operNS:doesTokenExist" returnQName="retNS:doesTokenExistReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://token" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:token" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="doesTokenExist listTokens getToken logIn logOut"/>
+
+  </service>
+</deployment>
