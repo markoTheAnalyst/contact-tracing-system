@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="737.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ApplicationController">
+   <children>
+      <TabPane layoutX="20.0" layoutY="40.0" prefHeight="435.0" prefWidth="209.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="chat">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="chatArea" editable="false" prefHeight="334.0" prefWidth="209.0" />
+                        <TextField fx:id="chatBox" layoutY="351.0" />
+                        <JFXButton fx:id="sendBttn" layoutX="161.0" layoutY="351.0" onAction="#send" prefHeight="25.0" prefWidth="48.0" style="-fx-background-color: #42b8e3;" text="Send" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="multicast chat">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="mcChatArea" editable="false" prefHeight="334.0" prefWidth="209.0" />
+                        <TextField fx:id="mcChatBox" layoutY="351.0" />
+                        <JFXButton fx:id="mcSendBttn" layoutX="161.0" layoutY="351.0" onAction="#sendMulticast" prefHeight="25.0" prefWidth="48.0" style="-fx-background-color: #42b8e3;" text="Send" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <AnchorPane layoutX="282.0" layoutY="40.0" prefHeight="234.0" prefWidth="433.0" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <JFXTextField fx:id="tokenField" labelFloat="true" layoutX="51.0" layoutY="14.0" prefHeight="25.0" prefWidth="331.0" promptText="token" />
+            <JFXRadioButton fx:id="radioBttn1" accessibleText="potencijalno zarazen" layoutX="49.0" layoutY="117.0" text="Potencijalno zaražen">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group1" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="radioBttn2" accessibleText="zarazen" layoutX="202.0" layoutY="117.0" text="Zaražen" toggleGroup="$group1" />
+            <JFXRadioButton fx:id="radioBttn3" accessibleText="nezarazen" layoutX="302.0" layoutY="117.0" selected="true" text="Nezaražen" toggleGroup="$group1" />
+            <JFXButton fx:id="markBttn" layoutX="48.0" layoutY="171.0" onAction="#mark" style="-fx-background-color: #42b8e3;" text="Označi" textFill="WHITE" />
+            <JFXButton fx:id="blockBttn" layoutX="117.0" layoutY="171.0" onAction="#block" style="-fx-background-color: #42b8e3;" text="Blokiraj" textFill="WHITE" />
+            <JFXButton fx:id="unblockBttn" layoutX="195.0" layoutY="171.0" onAction="#unblock" style="-fx-background-color: #42b8e3;" text="Odblokiraj" textFill="WHITE" />
+            <JFXButton fx:id="tokensBttn" layoutX="48.0" layoutY="61.0" onAction="#listTokens" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #42b8e3;" text="Aktivni tokeni" textFill="WHITE" />
+            <JFXButton fx:id="showBttn" layoutX="291.0" layoutY="171.0" onAction="#showMap" style="-fx-background-color: #42b8e3;" text="Prikaži lokacije" textFill="WHITE" />
+            <JFXButton fx:id="downloadBttn" layoutX="276.0" layoutY="61.0" onAction="#download" style="-fx-background-color: #42b8e3;" text="Preuzmi datoteke" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <ListView fx:id="notificationList" layoutX="282.0" layoutY="304.0" prefHeight="102.0" prefWidth="433.0" />
+   </children>
+</AnchorPane>
